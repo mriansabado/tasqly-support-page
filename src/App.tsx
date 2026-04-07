@@ -1,7 +1,11 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import tasqlyLogo from './assets/tasqly-logo (2).png'
 
-const SUPPORT_EMAIL = 'SUPPORT_EMAIL_HERE'
+const SUPPORT_EMAIL = 'ian@maunadigital.com'
+const COMPANY_NAME = 'Mauna Digital'
+const SUPPORT_SITE_URL = 'https://tasqly-support-page.vercel.app/'
+const PRIVACY_EFFECTIVE_DATE = 'April 7, 2026'
+const PRIVACY_LAST_UPDATED = 'April 7, 2026'
 const RESPONSE_TIME = 'Typically within 24–48 hours'
 const CURRENT_VERSION = 'v1.0.x'
 
@@ -31,6 +35,17 @@ async function copyText(text: string) {
 function App() {
   const [copied, setCopied] = useState<'idle' | 'ok' | 'fail'>('idle')
 
+  useEffect(() => {
+    const openPrivacyFromHash = () => {
+      if (window.location.hash !== '#privacy-policy') return
+      const el = document.getElementById('privacy-policy-details')
+      if (el instanceof HTMLDetailsElement) el.open = true
+    }
+    openPrivacyFromHash()
+    window.addEventListener('hashchange', openPrivacyFromHash)
+    return () => window.removeEventListener('hashchange', openPrivacyFromHash)
+  }, [])
+
   const mailto = useMemo(() => `mailto:${SUPPORT_EMAIL}`, [])
   const appStoreUrl = 'APP_STORE_LINK_HERE'
 
@@ -59,7 +74,7 @@ function App() {
               <div className="text-sm font-semibold tracking-tight text-paper">
                 Tasqly Support
               </div>
-              <div className="text-xs text-paper/65">Tasqly (Gig Flow)</div>
+              <div className="text-xs text-paper/65">Freelance planner for iOS</div>
             </div>
           </div>
 
@@ -72,6 +87,12 @@ function App() {
             </a>
             <a className="rounded-lg px-2 py-1 hover:text-paper" href="#features">
               Features
+            </a>
+            <a
+              className="hidden rounded-lg px-2 py-1 hover:text-paper lg:inline"
+              href="#privacy-policy"
+            >
+              Privacy Policy
             </a>
             <a className="hidden rounded-lg px-2 py-1 hover:text-paper sm:inline" href="#contact">
               Support
@@ -106,7 +127,7 @@ function App() {
 
                 <div className="min-w-0">
                   <p className="text-sm font-semibold tracking-tight text-paper">
-                    Tasqly <span className="text-paper/65">(Gig Flow)</span>
+                    Tasqly
                   </p>
                   <p className="mt-1 text-sm text-paper/75">
                     Freelance planning made easy
@@ -376,8 +397,8 @@ function App() {
           <div className="mt-6 grid gap-3">
             {[
               {
-                q: 'What does Tasqly (Gig Flow) do?',
-                a: 'Tasqly is a simple workflow for gig sessions: plan them on the Planner, keep client notes and photos, record success metrics, and generate invoices with monthly totals.',
+                q: 'What does Tasqly do?',
+                a: 'Tasqly is a simple workflow for freelance work: plan sessions on the Planner, keep client notes and photos, record success metrics, and generate invoices with monthly totals.',
               },
               {
                 q: 'How do I get started?',
@@ -485,13 +506,254 @@ function App() {
               </div>
             ))}
           </div>
+
+          <p className="mt-8 text-center text-sm text-paper/75">
+            <a
+              className="font-semibold text-aqua no-underline hover:underline"
+              href="#privacy-policy"
+            >
+              Read the full Privacy Policy
+            </a>
+          </p>
+        </section>
+
+        <section
+          id="privacy-policy"
+          className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14"
+          aria-labelledby="privacy-policy-heading"
+        >
+          <article className="rounded-3xl bg-paper/5 p-6 shadow-glow ring-1 ring-paper/10 sm:p-8">
+            <details
+              id="privacy-policy-details"
+              className="group rounded-2xl open:bg-paper/[0.04]"
+            >
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 rounded-xl select-none [&::-webkit-details-marker]:hidden">
+                <div className="min-w-0">
+                  <h2
+                    id="privacy-policy-heading"
+                    className="text-2xl font-semibold tracking-tight text-paper"
+                  >
+                    Privacy Policy
+                  </h2>
+                  <p className="mt-3 text-sm leading-relaxed text-paper/75">
+                    <strong className="text-paper">Effective date:</strong>{' '}
+                    {PRIVACY_EFFECTIVE_DATE}
+                    <span className="text-paper/50"> · </span>
+                    <strong className="text-paper">Last updated:</strong>{' '}
+                    {PRIVACY_LAST_UPDATED}
+                  </p>
+                  <p className="mt-2 text-xs text-paper/65">
+                    Tap to expand or collapse the full policy.
+                  </p>
+                </div>
+                <span
+                  className="mt-1 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-paper/10 text-lg font-light text-paper/80 ring-1 ring-paper/15 transition group-open:rotate-45"
+                  aria-hidden="true"
+                >
+                  +
+                </span>
+              </summary>
+
+              <div className="mt-6 border-t border-paper/10 pt-6">
+                <p className="text-sm leading-relaxed text-paper/80">
+                  Tasqly (“we,” “our,” or “us”) respects your privacy. This
+                  Privacy Policy explains how information is handled when you
+                  use the Tasqly mobile app.
+                </p>
+              </div>
+
+              <div className="mt-6 space-y-8 text-sm leading-relaxed text-paper/85">
+              <section aria-labelledby="pp-1">
+                <h3 id="pp-1" className="text-base font-semibold text-paper">
+                  1. Overview
+                </h3>
+                <p className="mt-2">
+                  Tasqly is a productivity app for freelancers and independent
+                  workers. Core app data is stored locally on your device.
+                </p>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-paper/80">
+                  <li>No account is required to use core features.</li>
+                  <li>
+                    We do not run a user cloud backend for storing your
+                    planner/client content.
+                  </li>
+                  <li>We do not show third-party ads.</li>
+                  <li>We do not offer paid subscriptions at this time.</li>
+                </ul>
+              </section>
+
+              <section aria-labelledby="pp-2">
+                <h3 id="pp-2" className="text-base font-semibold text-paper">
+                  2. Information You Provide in the App
+                </h3>
+                <p className="mt-2">You may choose to enter information such as:</p>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-paper/80">
+                  <li>Client names and contact details</li>
+                  <li>Session notes and planning data</li>
+                  <li>Quick notes</li>
+                  <li>Success metrics / readings</li>
+                  <li>Optional profile details</li>
+                  <li>
+                    Optional branding/logo images selected from your photo
+                    library
+                  </li>
+                </ul>
+                <p className="mt-3">
+                  This information is stored on your device for app
+                  functionality.
+                </p>
+              </section>
+
+              <section aria-labelledby="pp-3">
+                <h3 id="pp-3" className="text-base font-semibold text-paper">
+                  3. Photo Library Access
+                </h3>
+                <p className="mt-2">
+                  If you choose to add a client photo or company logo, the app
+                  requests photo library permission. This access is only used to
+                  let you select images for in-app use and exported documents.
+                </p>
+              </section>
+
+              <section aria-labelledby="pp-4">
+                <h3 id="pp-4" className="text-base font-semibold text-paper">
+                  4. Data Storage and Sharing
+                </h3>
+                <p className="mt-2">
+                  Your app content is stored locally on your device (for example,
+                  local app storage/database). Tasqly does not require an
+                  account and does not upload your planner/client content to a
+                  Tasqly-operated cloud backend for normal app use.
+                </p>
+                <p className="mt-3">
+                  When you use sharing/export features (for example, generating
+                  and sharing a PDF), data is processed on-device and then
+                  shared only through destinations you choose (such as Mail,
+                  Messages, Files, or other share targets).
+                </p>
+              </section>
+
+              <section aria-labelledby="pp-5">
+                <h3 id="pp-5" className="text-base font-semibold text-paper">
+                  5. Analytics, Ads, and Tracking
+                </h3>
+                <p className="mt-2">At this time:</p>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-paper/80">
+                  <li>We do not integrate third-party ad networks.</li>
+                  <li>We do not run subscription paywalls.</li>
+                  <li>We do not use in-app behavioral advertising tracking.</li>
+                </ul>
+                <p className="mt-3">
+                  If this changes in a future release, we will update this Privacy
+                  Policy and App Store privacy disclosures.
+                </p>
+              </section>
+
+              <section aria-labelledby="pp-6">
+                <h3 id="pp-6" className="text-base font-semibold text-paper">
+                  6. App Store / Platform Data
+                </h3>
+                <p className="mt-2">
+                  Apple and other platform providers may collect certain
+                  diagnostic, usage, or device information under their own terms
+                  and privacy policies. That processing is governed by those
+                  providers, not this Privacy Policy.
+                </p>
+              </section>
+
+              <section aria-labelledby="pp-7">
+                <h3 id="pp-7" className="text-base font-semibold text-paper">
+                  7. Data Retention and Deletion
+                </h3>
+                <p className="mt-2">
+                  Because core data is stored on your device, you control
+                  retention. You can remove data by deleting items in the app or
+                  uninstalling the app. If you export or share files, copies
+                  may remain in the apps/services you shared them with.
+                </p>
+              </section>
+
+              <section aria-labelledby="pp-8">
+                <h3 id="pp-8" className="text-base font-semibold text-paper">
+                  8. Children’s Privacy
+                </h3>
+                <p className="mt-2">
+                  Tasqly is not directed to children under 13, and we do not
+                  knowingly collect personal information from children through a
+                  Tasqly-hosted account system.
+                </p>
+              </section>
+
+              <section aria-labelledby="pp-9">
+                <h3 id="pp-9" className="text-base font-semibold text-paper">
+                  9. International Users
+                </h3>
+                <p className="mt-2">
+                  If you use the app outside your home country, local laws may
+                  differ regarding privacy rights. We aim to handle data
+                  practices transparently regardless of region.
+                </p>
+              </section>
+
+              <section aria-labelledby="pp-10">
+                <h3 id="pp-10" className="text-base font-semibold text-paper">
+                  10. Changes to This Privacy Policy
+                </h3>
+                <p className="mt-2">
+                  We may update this Privacy Policy from time to time. Updates
+                  will be reflected by revising the “Last updated” date above.
+                </p>
+              </section>
+
+              <section aria-labelledby="pp-11">
+                <h3 id="pp-11" className="text-base font-semibold text-paper">
+                  11. Contact
+                </h3>
+                <p className="mt-2">
+                  If you have privacy questions, contact us at:
+                </p>
+                <ul className="mt-3 list-none space-y-2 text-paper/85">
+                  <li>
+                    <strong className="text-paper">Email:</strong>{' '}
+                    <a href={mailto} className="text-aqua">
+                      {SUPPORT_EMAIL}
+                    </a>
+                  </li>
+                  <li>
+                    <strong className="text-paper">
+                      Developer/Company Name:
+                    </strong>{' '}
+                    {COMPANY_NAME}
+                  </li>
+                  <li>
+                    <strong className="text-paper">Website/Support URL:</strong>{' '}
+                    <a
+                      href={SUPPORT_SITE_URL}
+                      className="break-all text-aqua"
+                    >
+                      {SUPPORT_SITE_URL}
+                    </a>
+                  </li>
+                </ul>
+              </section>
+              </div>
+            </details>
+          </article>
         </section>
 
         <footer className="border-t border-paper/10 py-10">
           <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 text-sm text-paper/65 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-            <div>
-              <span className="font-semibold text-paper/85">Tasqly</span> ·
-              Support
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+              <span>
+                <span className="font-semibold text-paper/85">Tasqly</span> ·
+                Support
+              </span>
+              <a
+                className="text-paper/75 no-underline hover:text-paper hover:underline"
+                href="#privacy-policy"
+              >
+                Privacy Policy
+              </a>
             </div>
             <div className="flex flex-col gap-1 sm:items-end">
               <div>Current version: {CURRENT_VERSION}</div>
