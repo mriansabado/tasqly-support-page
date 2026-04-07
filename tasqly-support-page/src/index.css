@@ -16,7 +16,7 @@
   }
 
   ::selection {
-    @apply bg-brand-600/40 text-white;
+    @apply bg-aqua/40 text-paper;
   }
 
   a {
