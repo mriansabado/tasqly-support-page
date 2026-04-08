@@ -1,5 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import tasqlyLogo from './assets/tasqly-logo (2).png'
+import mobileScreenshotPlanner from './assets/tasqly-mobile-screenshot.png'
+import mobileScreenshotClient from './assets/tasqly-mobile-screenshot2.png'
+import mobileScreenshotMetrics from './assets/tasqly-metrics-screenshot2.png'
+import ipadScreenshotPlanner from './assets/tasqly-ipad-screenshots.png'
 
 const SUPPORT_EMAIL = 'ian@maunadigital.com'
 const COMPANY_NAME = 'Mauna Digital'
@@ -84,6 +88,9 @@ function App() {
           >
             <a className="rounded-lg px-2 py-1 hover:text-paper" href="#overview">
               Overview
+            </a>
+            <a className="rounded-lg px-2 py-1 hover:text-paper" href="#screenshots">
+              Screenshots
             </a>
             <a className="rounded-lg px-2 py-1 hover:text-paper" href="#features">
               Features
@@ -232,6 +239,105 @@ function App() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section
+          id="screenshots"
+          className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14"
+          aria-labelledby="screenshots-heading"
+        >
+          <div className="flex flex-col gap-2">
+            <h2
+              id="screenshots-heading"
+              className="text-2xl font-semibold tracking-tight text-paper"
+            >
+              Screenshots
+            </h2>
+            <p className="text-sm text-paper/75">
+              Planner and client workflow on iPhone. Tasqly works great on iPad too — extra space
+              means calendar and your day can stay on screen together. Dark mode, local-first, built
+              for freelancers.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-8 sm:grid-cols-2 md:grid-cols-3 sm:gap-10">
+            <figure className="mx-auto w-full max-w-[280px] sm:max-w-none">
+              <div className="relative overflow-hidden rounded-[2rem] bg-paper/5 shadow-glow ring-1 ring-paper/15">
+                <div className="absolute -inset-px rounded-[2rem] bg-[linear-gradient(145deg,rgba(81,229,230,0.12),transparent_45%,rgba(252,96,72,0.08))] pointer-events-none" />
+                <img
+                  src={mobileScreenshotPlanner}
+                  alt="Tasqly Planner on iPhone: monthly calendar with session dots and the day’s sessions list"
+                  className="relative w-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
+                  width={1206}
+                  height={2622}
+                />
+              </div>
+              <figcaption className="mt-3 text-center text-xs font-medium text-paper/65">
+                Planner — calendar &amp; sessions
+              </figcaption>
+            </figure>
+            <figure className="mx-auto w-full max-w-[280px] sm:max-w-none">
+              <div className="relative overflow-hidden rounded-[2rem] bg-paper/5 shadow-glow ring-1 ring-paper/15">
+                <div className="absolute -inset-px rounded-[2rem] bg-[linear-gradient(145deg,rgba(252,96,72,0.10),transparent_45%,rgba(81,229,230,0.10))] pointer-events-none" />
+                <img
+                  src={mobileScreenshotClient}
+                  alt="Tasqly client profile on iPhone: contact details, notes, success metrics, and monthly invoice"
+                  className="relative w-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
+                  width={1206}
+                  height={2622}
+                />
+              </div>
+              <figcaption className="mt-3 text-center text-xs font-medium text-paper/65">
+                Client profile — notes &amp; metrics
+              </figcaption>
+            </figure>
+            <figure className="mx-auto w-full max-w-[280px] sm:max-w-none">
+              <div className="relative overflow-hidden rounded-[2rem] bg-paper/5 shadow-glow ring-1 ring-paper/15">
+                <div className="absolute -inset-px rounded-[2rem] bg-[linear-gradient(145deg,rgba(170,204,53,0.14),transparent_45%,rgba(81,229,230,0.10))] pointer-events-none" />
+                <img
+                  src={mobileScreenshotMetrics}
+                  alt="Tasqly success metrics screen on iPhone: track readings over time with history and latest value"
+                  className="relative w-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
+                  width={1320}
+                  height={2868}
+                />
+              </div>
+              <figcaption className="mt-3 text-center text-xs font-medium text-paper/65">
+                Success metrics — readings over time
+              </figcaption>
+            </figure>
+          </div>
+
+          <div className="mt-14 border-t border-paper/10 pt-12">
+            <h3 className="text-lg font-semibold tracking-tight text-paper">iPad</h3>
+            <p className="mt-2 max-w-2xl text-sm text-paper/75">
+              The same app scales nicely on iPad — comfortable typography, roomy layouts, and a planner
+              view that keeps the month and today’s sessions side by side.
+            </p>
+            <figure className="mx-auto mt-8 w-full max-w-2xl lg:max-w-3xl">
+              <div className="relative overflow-hidden rounded-[1.75rem] bg-paper/5 shadow-glow ring-1 ring-paper/15 sm:rounded-[2rem]">
+                <div className="pointer-events-none absolute -inset-px rounded-[1.75rem] bg-[linear-gradient(135deg,rgba(170,204,53,0.12),transparent_50%,rgba(81,229,230,0.10))] sm:rounded-[2rem]" />
+                <img
+                  src={ipadScreenshotPlanner}
+                  alt="Tasqly Planner on iPad: split layout with monthly calendar and the selected day’s sessions list"
+                  className="relative w-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
+                  width={2064}
+                  height={2752}
+                />
+              </div>
+              <figcaption className="mt-3 text-center text-xs font-medium text-paper/65">
+                iPad — calendar &amp; day list together
+              </figcaption>
+            </figure>
           </div>
         </section>
 
