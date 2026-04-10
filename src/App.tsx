@@ -10,7 +10,7 @@ const COMPANY_NAME = 'Mauna Digital'
 const SUPPORT_SITE_URL = 'https://tasqly-support-page.vercel.app/'
 const PRIVACY_EFFECTIVE_DATE = 'April 7, 2026'
 const PRIVACY_LAST_UPDATED = 'April 7, 2026'
-const RESPONSE_TIME = 'Typically within 24–48 hours'
+const RESPONSE_TIME = 'Typically within 24 to 48 hours'
 const CURRENT_VERSION = 'v1.0.x'
 
 async function copyText(text: string) {
@@ -80,7 +80,9 @@ function App() {
               <div className="text-sm font-semibold tracking-tight text-paper">
                 Tasqly Support
               </div>
-              <div className="text-xs text-paper/65">Freelance planner for iOS</div>
+              <div className="text-xs text-paper/65">
+                Lightweight planner for freelancers, by a freelancer
+              </div>
             </div>
           </div>
 
@@ -134,20 +136,21 @@ function App() {
                   </div>
                 </div>
 
-                <p className="mt-5 text-sm font-semibold tracking-tight text-paper">
-                  Tasqly
-                </p>
-                <p className="mt-1 text-sm text-paper/75 sm:text-base">
-                  Freelance planning made easy
+                <p className="mt-5 text-pretty text-sm text-paper/75 sm:text-base">
+                  By a freelancer, for freelancers
                 </p>
               </div>
 
               <h1 className="mt-6 text-balance text-4xl font-semibold tracking-tight text-paper sm:text-5xl">
-                Stay organized, plan your week, look professional.
+                Stay organized, plan your week, stress less.
               </h1>
               <p className="mt-4 text-pretty text-base leading-relaxed text-paper/80 sm:text-lg">
-                Plan sessions on a calendar, manage clients, track success metrics,
-                and export invoices with clean month totals — all without an account.
+                A lightweight app for iPhone and iPad to organize sessions, clients, and
+                the details that come with freelance work: calendar, notes, metrics, and
+                month summaries when you need them. Built for your phone in your pocket,
+                with extra breathing room on iPad when you want it. No login, no cloud:
+                everything stays on your device. One purchase on the App Store, and
+                Tasqly is yours for as long as it stays on the store. Simple as that.
               </p>
 
               <div className="mt-8 flex flex-col items-center gap-4">
@@ -195,26 +198,28 @@ function App() {
             <div className="relative">
               <div className="absolute -inset-8 rounded-[2rem] bg-[radial-gradient(closest-side,rgba(252,96,72,0.22),transparent_65%)] blur-2xl" />
               <div className="relative overflow-hidden rounded-[1.9rem] bg-paper/5 p-6 shadow-glow ring-1 ring-paper/12">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-3">
                   <div className="text-sm font-semibold text-paper">What you get</div>
-                  <div className="text-xs text-paper/65">Designed for freelancers</div>
+                  <div className="max-w-[14rem] text-right text-xs text-paper/65 sm:max-w-none">
+                    A simple toolkit, not enterprise software
+                  </div>
                 </div>
 
                 <div className="mt-5 grid gap-3">
                   {[
                     {
                       t: 'Planner that matches real weeks',
-                      d: 'Calendar sessions with weekly repeats and quick edits.',
+                      d: 'See what’s on your plate: sessions, weekly repeats, and quick edits.',
                       c: 'border-l-aqua/70',
                     },
                     {
                       t: 'Clients, notes, and profile photos',
-                      d: 'Keep context and updates in one place.',
+                      d: 'Keep names, context, and follow ups where you’ll actually find them.',
                       c: 'border-l-lime/70',
                     },
                     {
                       t: 'Invoices with month totals',
-                      d: 'Share/Print on iOS to save as PDF and send fast.',
+                      d: 'Share or Print on iOS to save as PDF and send fast.',
                       c: 'border-l-amber/70',
                     },
                     {
@@ -234,9 +239,12 @@ function App() {
                 </div>
 
                 <div className="mt-6 rounded-2xl bg-paper/5 p-4 ring-1 ring-paper/10">
-                  <div className="text-xs font-medium text-paper/70">Local-first</div>
+                  <div className="text-xs font-medium text-paper/70">
+                    On your phone, buy once
+                  </div>
                   <div className="mt-1 text-sm text-paper/80">
-                    No account required. No ads. No subscriptions. Your data stays on your device.
+                    No account required. No ads. Pay once on the App Store, with no
+                    subscription. Your data stays on your phone.
                   </div>
                 </div>
               </div>
@@ -257,9 +265,10 @@ function App() {
               Screenshots
             </h2>
             <p className="text-sm text-paper/75">
-              Planner and client workflow on iPhone. Tasqly works great on iPad too — extra space
-              means calendar and your day can stay on screen together. Dark mode, local-first, built
-              for freelancers.
+              We built Tasqly around the iPhone you already use every day. Your week, your clients,
+              and the notes that keep you organized are a tap or two away, easy to use with one hand
+              while you are between sessions or on the go. Your information stays on your phone
+              unless you send it yourself.
             </p>
           </div>
 
@@ -278,7 +287,7 @@ function App() {
                 />
               </div>
               <figcaption className="mt-3 text-center text-xs font-medium text-paper/65">
-                Planner — calendar &amp; sessions
+                Planner: calendar &amp; sessions
               </figcaption>
             </figure>
             <figure className="mx-auto w-full max-w-[280px] sm:max-w-none">
@@ -295,7 +304,7 @@ function App() {
                 />
               </div>
               <figcaption className="mt-3 text-center text-xs font-medium text-paper/65">
-                Client profile — notes &amp; metrics
+                Client profile: notes &amp; metrics
               </figcaption>
             </figure>
             <figure className="mx-auto w-full max-w-[280px] sm:max-w-none">
@@ -312,7 +321,7 @@ function App() {
                 />
               </div>
               <figcaption className="mt-3 text-center text-xs font-medium text-paper/65">
-                Success metrics — readings over time
+                Success metrics: readings over time
               </figcaption>
             </figure>
           </div>
@@ -320,8 +329,8 @@ function App() {
           <div className="mt-14 border-t border-paper/10 pt-12">
             <h3 className="text-lg font-semibold tracking-tight text-paper">iPad</h3>
             <p className="mt-2 max-w-2xl text-sm text-paper/75">
-              The same app scales nicely on iPad — comfortable typography, roomy layouts, and a planner
-              view that keeps the month and today’s sessions side by side.
+              The same app scales nicely on iPad, with comfortable typography, roomy layouts, and a
+              planner view that keeps the month and today’s sessions side by side.
             </p>
             <figure className="mx-auto mt-8 w-full max-w-2xl lg:max-w-3xl">
               <div className="relative overflow-hidden rounded-[1.75rem] bg-paper/5 shadow-glow ring-1 ring-paper/15 sm:rounded-[2rem]">
@@ -337,7 +346,7 @@ function App() {
                 />
               </div>
               <figcaption className="mt-3 text-center text-xs font-medium text-paper/65">
-                iPad — calendar &amp; day list together
+                iPad: calendar &amp; day list together
               </figcaption>
             </figure>
           </div>
@@ -347,7 +356,8 @@ function App() {
           <div className="flex flex-col gap-2">
             <h2 className="text-2xl font-semibold tracking-tight text-paper">Features</h2>
             <p className="text-sm text-paper/75">
-              Built to help freelancers run a smoother workflow — planning to invoices.
+              Helpful tools for the messy middle of freelance work (planning, people, progress,
+              and paperwork) without the weight of a full CRM.
             </p>
           </div>
 
@@ -356,25 +366,25 @@ function App() {
               {
                 t: 'Planner',
                 d: 'Create sessions, repeat weekly, and keep a clear view of your schedule.',
-                a: 'Weekly repeats · quick edits · clean calendar',
+                a: 'Weekly repeats, quick edits, clean calendar',
                 c: 'from-aqua/30 to-paper/5 ring-aqua/35',
               },
               {
                 t: 'Client management',
                 d: 'Edit client details anytime and add a profile photo (with iOS permissions).',
-                a: 'Profiles · notes · photos',
+                a: 'Profiles, notes, photos',
                 c: 'from-lime/25 to-paper/5 ring-lime/35',
               },
               {
                 t: 'Success metrics',
                 d: 'Add readings over time so progress and patterns are easy to see.',
-                a: 'Lightweight entries · dates · values',
+                a: 'Lightweight entries, dates, values',
                 c: 'from-coral/25 to-paper/5 ring-coral/35',
               },
               {
                 t: 'Invoices & PDFs',
-                d: 'Generate invoices for a month with totals, then share via iOS Share/Print.',
-                a: 'Month totals · PDF share · professional look',
+                d: 'Generate invoices for a month with totals, then share via iOS Share or Print.',
+                a: 'Month totals, PDF share, clear layout',
                 c: 'from-amber/30 to-paper/5 ring-amber/35',
               },
             ].map((x) => (
@@ -382,14 +392,9 @@ function App() {
                 key={x.t}
                 className={`rounded-3xl bg-gradient-to-br ${x.c} p-6 ring-1 shadow-glow`}
               >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <div className="text-sm font-semibold text-paper">{x.t}</div>
-                    <p className="mt-2 text-sm leading-relaxed text-paper/80">{x.d}</p>
-                  </div>
-                  <span className="rounded-full bg-paper/10 px-3 py-1 text-xs font-semibold text-paper ring-1 ring-paper/15">
-                    Tasqly
-                  </span>
+                <div>
+                  <div className="text-sm font-semibold text-paper">{x.t}</div>
+                  <p className="mt-2 text-sm leading-relaxed text-paper/80">{x.d}</p>
                 </div>
                 <div className="mt-4 text-xs text-paper/75">{x.a}</div>
               </div>
@@ -401,7 +406,8 @@ function App() {
               <div>
                 <div className="text-sm font-semibold text-paper">Ready to try it?</div>
                 <div className="mt-1 text-sm text-paper/75">
-                  Download Tasqly and start planning your next week in minutes.
+                  One purchase on the App Store. Keep it for as long as Tasqly stays there.
+                  Download and plan your next week in minutes.
                 </div>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -434,7 +440,7 @@ function App() {
                 Contact
               </h2>
               <p className="mt-2 text-sm text-paper/70">
-                Email is the fastest way to reach us.
+                Email is the fastest way to reach the developer, another freelancer, happy to help.
               </p>
             </div>
           </div>
@@ -498,7 +504,7 @@ function App() {
               FAQ
             </h2>
             <p className="mt-2 text-sm text-paper/70">
-              Concrete answers for real workflows.
+              Straight answers for how freelancers actually use the app.
             </p>
           </div>
 
@@ -506,7 +512,11 @@ function App() {
             {[
               {
                 q: 'What does Tasqly do?',
-                a: 'Tasqly is a simple workflow for freelance work: plan sessions on the Planner, keep client notes and photos, record success metrics, and generate invoices with monthly totals.',
+                a: 'Tasqly is a lightweight iPhone and iPad app for freelance work: plan sessions on the Planner, keep client notes and photos, track success metrics, and generate invoices with monthly totals. It’s built to organize your week and the details around your clients without a heavy CRM.',
+              },
+              {
+                q: 'Pricing: subscription or one time?',
+                a: 'One time purchase on the App Store, with no subscription. Pay once and use Tasqly for as long as it remains available on the App Store (Apple’s standard terms apply).',
               },
               {
                 q: 'How do I get started?',
@@ -514,11 +524,11 @@ function App() {
               },
               {
                 q: 'Planner: how do sessions and weekly repeats work?',
-                a: 'Add a session on a date/time, then set it to repeat weekly (if enabled). Repeats are best for stable schedules. If your week changes, edit or remove the series and create a new one.',
+                a: 'Add a session on a date and time, then set it to repeat weekly (if enabled). Repeats are best for stable schedules. If your week changes, edit or remove the series and create a new one.',
               },
               {
                 q: 'Clients: can I edit details later (and add a photo)?',
-                a: 'Yes. Open a client profile to update details and tap the photo area to set/change the profile image. If the picker doesn’t open, check iOS Settings > Privacy & Security > Photos and allow access for Tasqly.',
+                a: 'Yes. Open a client profile to update details and tap the photo area to set or change the profile image. If the picker doesn’t open, check iOS Settings > Privacy & Security > Photos and allow access for Tasqly.',
               },
               {
                 q: 'Success metrics: how do I add readings?',
@@ -530,22 +540,22 @@ function App() {
               },
               {
                 q: 'Invoices: how do I share or save a PDF?',
-                a: 'Use the iOS Share/Print flow. You can “Print”, pinch-out to the preview, then share/save as a PDF—or share directly to Files, Mail, Messages, etc. (Options vary by iOS/apps.)',
+                a: 'Use the iOS Share or Print flow. You can “Print”, pinch out to the preview, then share or save as a PDF, or share directly to Files, Mail, Messages, and more. (Options vary by iOS version and apps.)',
               },
               {
                 q: 'Branding: can I add my logo?',
                 a: 'Yes. Set your branding logo in Settings. It appears on the Planner header and on invoices so your PDFs look consistent.',
               },
               {
-                q: 'Theme: does Tasqly support light/dark mode?',
-                a: 'Yes. Tasqly supports light and dark mode. If it looks “stuck”, check iOS Appearance and any in-app theme setting.',
+                q: 'Theme: does Tasqly support light and dark mode?',
+                a: 'Yes. Tasqly supports light and dark mode. If it looks “stuck”, check iOS Appearance and any in app theme setting.',
               },
               {
-                q: 'Data & privacy: do I need an account? Are there ads/subscriptions?',
-                a: 'No account required. Tasqly is local-first: your data stays on your device. There are no ads and no subscriptions.',
+                q: 'Data and privacy: do I need an account? Are there ads or subscriptions?',
+                a: 'No account required. Your data stays on your device. There are no ads and no subscriptions. It is a buy once app on the App Store.',
               },
               {
-                q: 'Backups / switching phones: will my data sync?',
+                q: 'Backups and switching phones: will my data sync?',
                 a: 'Tasqly does not currently include cross-device sync. If you switch phones, restore your new device from an iCloud (or Finder) backup that includes Tasqly’s app data.',
               },
               {
@@ -579,50 +589,76 @@ function App() {
           id="privacy"
           className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14"
         >
-          <div>
-            <h2 className="text-2xl font-semibold tracking-tight text-paper">
-              Privacy &amp; Data
-            </h2>
-            <p className="mt-2 text-sm text-paper/70">
-              Plain language, no overclaims.
-            </p>
-          </div>
+          <div className="relative pb-2 pt-1 sm:pb-3 sm:pt-2">
+            <div
+              className="pointer-events-none absolute inset-0 translate-x-2 translate-y-5 rounded-[1.85rem] bg-gradient-to-br from-aqua/35 via-primary to-lime/25 opacity-95 shadow-[14px_20px_0_rgba(0,0,0,0.42),0_0_0_1px_rgba(81,229,230,0.2)] ring-1 ring-lime/25 sm:translate-x-3 sm:translate-y-6 sm:rounded-[2rem]"
+              aria-hidden
+            />
+            <div
+              className="pointer-events-none absolute -inset-6 -z-10 rounded-[2.25rem] bg-[radial-gradient(closest-side,rgba(81,229,230,0.22),transparent_70%),radial-gradient(closest-side,rgba(170,204,53,0.14),transparent_72%)] blur-2xl"
+              aria-hidden
+            />
 
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {[
-              {
-                t: 'Your data stays on your device',
-                d: 'Tasqly is built for on-device storage. No required sign-in. No ads.',
-              },
-              {
-                t: 'No subscriptions',
-                d: 'Tasqly does not require a subscription for core features. If that ever changes, this page and the App Store listing will be updated clearly.',
-              },
-              {
-                t: 'App Store privacy labels',
-                d: 'The App Store privacy labels are the authoritative source for what data is collected (if any). Email us if anything is unclear.',
-              },
-            ].map((c) => (
+            <div className="relative overflow-hidden rounded-[1.85rem] border-2 border-aqua/55 bg-gradient-to-b from-paper/[0.14] via-paper/[0.06] to-primary/70 p-6 shadow-[0_1px_0_rgba(255,255,255,0.16)_inset,0_22px_56px_rgba(0,0,0,0.5),0_0_48px_rgba(81,229,230,0.14)] ring-1 ring-paper/20 sm:rounded-[2rem] sm:p-8">
               <div
-                key={c.t}
-                className="rounded-3xl bg-paper/5 p-5 shadow-glow ring-1 ring-paper/10"
-              >
-                <h3 className="text-sm font-semibold text-paper">{c.t}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-paper/80">
-                  {c.d}
+                className="pointer-events-none absolute -right-24 -top-20 h-64 w-64 rounded-full bg-aqua/20 blur-3xl"
+                aria-hidden
+              />
+              <div
+                className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-lime/15 blur-3xl"
+                aria-hidden
+              />
+              <div
+                className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aqua/50 to-transparent"
+                aria-hidden
+              />
+
+              <div className="relative">
+                <h2 className="text-2xl font-semibold tracking-tight text-paper">
+                  Privacy &amp; Data
+                </h2>
+                <p className="mt-2 text-sm text-paper/70">
+                  Plain language, no overclaims.
+                </p>
+
+                <div className="mt-6 grid gap-4 md:grid-cols-3">
+                  {[
+                    {
+                      t: 'Your data stays on your device',
+                      d: 'Tasqly is built for on-device storage. No required sign-in. No ads. Buy once.',
+                    },
+                    {
+                      t: 'One time purchase',
+                      d: 'Buy once on the App Store and use Tasqly for as long as it stays listed and supported there. No subscription tiers. If the model ever changed, this page and the App Store listing would be updated clearly.',
+                    },
+                    {
+                      t: 'App Store privacy labels',
+                      d: 'The App Store privacy labels are the authoritative source for what data is collected (if any). Email us if anything is unclear.',
+                    },
+                  ].map((c) => (
+                    <div
+                      key={c.t}
+                      className="rounded-2xl border border-paper/12 bg-primary/45 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_12px_28px_rgba(0,0,0,0.35)] ring-1 ring-aqua/15"
+                    >
+                      <h3 className="text-sm font-semibold text-paper">{c.t}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-paper/80">
+                        {c.d}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <p className="mt-8 text-center text-sm text-paper/80">
+                  <a
+                    className="font-semibold text-aqua no-underline hover:underline"
+                    href="#privacy-policy"
+                  >
+                    Read the full Privacy Policy
+                  </a>
                 </p>
               </div>
-            ))}
+            </div>
           </div>
-
-          <p className="mt-8 text-center text-sm text-paper/75">
-            <a
-              className="font-semibold text-aqua no-underline hover:underline"
-              href="#privacy-policy"
-            >
-              Read the full Privacy Policy
-            </a>
-          </p>
         </section>
 
         <section
@@ -676,17 +712,21 @@ function App() {
                   1. Overview
                 </h3>
                 <p className="mt-2">
-                  Tasqly is a productivity app for freelancers and independent
-                  workers. Core app data is stored locally on your device.
+                  Tasqly is a lightweight productivity app for freelancers and
+                  independent workers, built by a freelancer. Core app data is
+                  stored locally on your device.
                 </p>
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-paper/80">
                   <li>No account is required to use core features.</li>
                   <li>
                     We do not run a user cloud backend for storing your
-                    planner/client content.
+                    planner and client content.
                   </li>
                   <li>We do not show third-party ads.</li>
-                  <li>We do not offer paid subscriptions at this time.</li>
+                  <li>
+                    The app is sold as a one time purchase on the Apple App Store
+                    (not a subscription).
+                  </li>
                 </ul>
               </section>
 
@@ -699,10 +739,10 @@ function App() {
                   <li>Client names and contact details</li>
                   <li>Session notes and planning data</li>
                   <li>Quick notes</li>
-                  <li>Success metrics / readings</li>
+                  <li>Success metrics and readings</li>
                   <li>Optional profile details</li>
                   <li>
-                    Optional branding/logo images selected from your photo
+                    Optional branding or logo images selected from your photo
                     library
                   </li>
                 </ul>
@@ -719,7 +759,7 @@ function App() {
                 <p className="mt-2">
                   If you choose to add a client photo or company logo, the app
                   requests photo library permission. This access is only used to
-                  let you select images for in-app use and exported documents.
+                  let you select images for use in the app and in exported documents.
                 </p>
               </section>
 
@@ -729,12 +769,12 @@ function App() {
                 </h3>
                 <p className="mt-2">
                   Your app content is stored locally on your device (for example,
-                  local app storage/database). Tasqly does not require an
-                  account and does not upload your planner/client content to a
-                  Tasqly-operated cloud backend for normal app use.
+                  local app storage or database). Tasqly does not require an
+                  account and does not upload your planner and client content to a
+                  cloud backend operated by Tasqly for normal app use.
                 </p>
                 <p className="mt-3">
-                  When you use sharing/export features (for example, generating
+                  When you use sharing and export features (for example, generating
                   and sharing a PDF), data is processed on-device and then
                   shared only through destinations you choose (such as Mail,
                   Messages, Files, or other share targets).
@@ -748,8 +788,8 @@ function App() {
                 <p className="mt-2">At this time:</p>
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-paper/80">
                   <li>We do not integrate third-party ad networks.</li>
-                  <li>We do not run subscription paywalls.</li>
-                  <li>We do not use in-app behavioral advertising tracking.</li>
+                  <li>We do not use subscription paywalls inside the app.</li>
+                  <li>We do not use in app behavioral advertising tracking.</li>
                 </ul>
                 <p className="mt-3">
                   If this changes in a future release, we will update this Privacy
@@ -759,7 +799,7 @@ function App() {
 
               <section aria-labelledby="pp-6">
                 <h3 id="pp-6" className="text-base font-semibold text-paper">
-                  6. App Store / Platform Data
+                  6. App Store and Platform Data
                 </h3>
                 <p className="mt-2">
                   Apple and other platform providers may collect certain
@@ -777,7 +817,7 @@ function App() {
                   Because core data is stored on your device, you control
                   retention. You can remove data by deleting items in the app or
                   uninstalling the app. If you export or share files, copies
-                  may remain in the apps/services you shared them with.
+                  may remain in the apps and services you shared them with.
                 </p>
               </section>
 
@@ -787,8 +827,8 @@ function App() {
                 </h3>
                 <p className="mt-2">
                   Tasqly is not directed to children under 13, and we do not
-                  knowingly collect personal information from children through a
-                  Tasqly-hosted account system.
+                  knowingly collect personal information from children through an
+                  account system hosted by Tasqly.
                 </p>
               </section>
 
@@ -829,12 +869,12 @@ function App() {
                   </li>
                   <li>
                     <strong className="text-paper">
-                      Developer/Company Name:
+                      Developer or company name:
                     </strong>{' '}
                     {COMPANY_NAME}
                   </li>
                   <li>
-                    <strong className="text-paper">Website/Support URL:</strong>{' '}
+                    <strong className="text-paper">Website and support URL:</strong>{' '}
                     <a
                       href={SUPPORT_SITE_URL}
                       className="break-all text-aqua"
@@ -853,8 +893,8 @@ function App() {
           <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 text-sm text-paper/65 sm:flex-row sm:items-center sm:justify-between sm:px-6">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
               <span>
-                <span className="font-semibold text-paper/85">Tasqly</span> ·
-                Support
+                <span className="font-semibold text-paper/85">Tasqly Support</span>
+                , by a freelancer, for freelancers
               </span>
               <a
                 className="text-paper/75 no-underline hover:text-paper hover:underline"
