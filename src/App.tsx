@@ -145,12 +145,12 @@ function App() {
                 Stay organized, plan your week, stress less.
               </h1>
               <p className="mt-4 text-pretty text-base leading-relaxed text-paper/80 sm:text-lg">
-                A lightweight app for iPhone and iPad to organize sessions, clients, and
-                the details that come with freelance work: calendar, notes, metrics, and
-                month summaries when you need them. Built for your phone in your pocket,
-                with extra breathing room on iPad when you want it. No login, no cloud:
-                everything stays on your device. One purchase on the App Store, and
-                Tasqly is yours for as long as it stays on the store. Simple as that.
+                A lightweight app for iPhone and iPad that helps freelancers keep the
+                moving parts together: sessions, clients, notes, invoices, and simple
+                progress metrics. Tasqly is built for real days between calls and errands,
+                not perfect routines. No account, no ads, no subscription - just a clean
+                tool that stays out of your way. One purchase on the App Store ($4.99), and
+                you are good.
               </p>
 
               <div className="mt-8 flex flex-col items-center gap-4">
@@ -175,6 +175,9 @@ function App() {
                   >
                     Need help?
                   </a>
+                </div>
+                <div className="text-xs text-paper/70">
+                  Built to be useful on day one, not bloated over time.
                 </div>
               </div>
 
@@ -243,8 +246,9 @@ function App() {
                     On your phone, buy once
                   </div>
                   <div className="mt-1 text-sm text-paper/80">
-                    No account required. No ads. Pay once on the App Store, with no
-                    subscription. Your data stays on your phone.
+                    No account required. No ads. Pay once on the App Store ($4.99), with no
+                    subscription. If Tasqly helps you feel a little less scattered week to
+                    week, it has done its job.
                   </div>
                 </div>
               </div>
@@ -516,7 +520,7 @@ function App() {
               },
               {
                 q: 'Pricing: subscription or one time?',
-                a: 'One time purchase on the App Store, with no subscription. Pay once and use Tasqly for as long as it remains available on the App Store (Apple’s standard terms apply).',
+                a: 'It is a one-time App Store purchase ($4.99), no subscription. We keep pricing simple: buy it once, use it as long as it is supported on the App Store.',
               },
               {
                 q: 'How do I get started?',
