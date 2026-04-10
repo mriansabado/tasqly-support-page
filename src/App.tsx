@@ -51,7 +51,9 @@ function App() {
   }, [])
 
   const mailto = useMemo(() => `mailto:${SUPPORT_EMAIL}`, [])
-  const appStoreUrl = 'APP_STORE_LINK_HERE'
+  const appStoreUrl = 'https://apps.apple.com/us/app/tasqly/id6761040872'
+  const appStoreCtaClassName =
+    'inline-flex min-h-12 items-center justify-center rounded-2xl bg-aqua px-7 py-3.5 text-base font-bold tracking-tight text-primary shadow-[0_0_0_1px_rgba(255,255,255,0.14),0_8px_32px_rgba(81,229,230,0.4),0_20px_50px_rgba(0,0,0,0.45)] transition hover:-translate-y-1 hover:bg-aqua/95 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.18),0_12px_44px_rgba(81,229,230,0.55),0_24px_60px_rgba(0,0,0,0.5)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aqua/70 active:translate-y-0 sm:min-h-[3.25rem] sm:px-8 sm:py-4 sm:text-lg'
 
   return (
     <div className="min-h-dvh bg-[radial-gradient(1100px_680px_at_15%_-10%,rgba(81,229,230,0.40),transparent_60%),radial-gradient(950px_560px_at_100%_5%,rgba(252,96,72,0.28),transparent_55%),radial-gradient(900px_520px_at_35%_105%,rgba(170,204,53,0.20),transparent_55%),radial-gradient(800px_520px_at_85%_110%,rgba(251,191,53,0.22),transparent_58%),linear-gradient(to_bottom,#12314f,#0f2a44,#12314f)]">
@@ -116,11 +118,11 @@ function App() {
 
       <main id="main">
         <section id="overview" className="mx-auto max-w-6xl px-4 pb-10 pt-10 sm:px-6 sm:pb-14 sm:pt-14">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div>
-              <div className="flex items-center gap-4">
+          <div className="flex flex-col gap-14">
+            <div className="mx-auto max-w-2xl text-center">
+              <div className="flex flex-col items-center">
                 <div className="relative">
-                  <div className="absolute -inset-6 rounded-[2rem] bg-[radial-gradient(closest-side,rgba(81,229,230,0.45),transparent_62%)] blur-2xl" />
+                  <div className="absolute -inset-8 rounded-[2rem] bg-[radial-gradient(closest-side,rgba(81,229,230,0.45),transparent_62%)] blur-2xl" />
                   <div className="relative h-24 w-24 overflow-hidden rounded-[1.9rem] bg-paper/10 ring-1 ring-paper/20 shadow-glow sm:h-28 sm:w-28">
                     <img
                       src={tasqlyLogo}
@@ -132,48 +134,48 @@ function App() {
                   </div>
                 </div>
 
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold tracking-tight text-paper">
-                    Tasqly
-                  </p>
-                  <p className="mt-1 text-sm text-paper/75">
-                    Freelance planning made easy
-                  </p>
-                </div>
+                <p className="mt-5 text-sm font-semibold tracking-tight text-paper">
+                  Tasqly
+                </p>
+                <p className="mt-1 text-sm text-paper/75 sm:text-base">
+                  Freelance planning made easy
+                </p>
               </div>
 
               <h1 className="mt-6 text-balance text-4xl font-semibold tracking-tight text-paper sm:text-5xl">
-                Stay organized, look professional, get paid.
+                Stay organized, plan your week, look professional.
               </h1>
-              <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-paper/80 sm:text-lg">
+              <p className="mt-4 text-pretty text-base leading-relaxed text-paper/80 sm:text-lg">
                 Plan sessions on a calendar, manage clients, track success metrics,
                 and export invoices with clean month totals — all without an account.
               </p>
 
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-col items-center gap-4">
                 <a
-                  className="inline-flex items-center justify-center rounded-xl bg-aqua px-4 py-2 text-sm font-semibold text-primary shadow-glow transition hover:-translate-y-0.5 hover:bg-aqua/95"
+                  className={appStoreCtaClassName}
                   href={appStoreUrl}
                   target="_blank"
                   rel="noreferrer"
                 >
                   Get Tasqly
                 </a>
-                <a
-                  className="inline-flex items-center justify-center rounded-xl bg-paper/10 px-4 py-2 text-sm font-semibold text-paper ring-1 ring-paper/15 transition hover:-translate-y-0.5 hover:bg-paper/15"
-                  href="#features"
-                >
-                  See features
-                </a>
-                <a
-                  className="inline-flex items-center justify-center rounded-xl bg-coral/15 px-4 py-2 text-sm font-semibold text-paper ring-1 ring-coral/30 transition hover:-translate-y-0.5 hover:bg-coral/20"
-                  href="#contact"
-                >
-                  Need help?
-                </a>
+                <div className="flex flex-wrap justify-center gap-3">
+                  <a
+                    className="inline-flex items-center justify-center rounded-xl bg-paper/10 px-4 py-2 text-sm font-semibold text-paper ring-1 ring-paper/15 transition hover:-translate-y-0.5 hover:bg-paper/15"
+                    href="#features"
+                  >
+                    See features
+                  </a>
+                  <a
+                    className="inline-flex items-center justify-center rounded-xl bg-coral/15 px-4 py-2 text-sm font-semibold text-paper ring-1 ring-coral/30 transition hover:-translate-y-0.5 hover:bg-coral/20"
+                    href="#contact"
+                  >
+                    Need help?
+                  </a>
+                </div>
               </div>
 
-              <div className="mt-7 flex flex-wrap gap-2 text-xs text-paper/85">
+              <div className="mt-7 flex flex-wrap justify-center gap-2 text-xs text-paper/85">
                 {[
                   { t: 'Planner', c: 'bg-aqua/18 ring-aqua/35' },
                   { t: 'Clients', c: 'bg-lime/18 ring-lime/35' },
@@ -402,9 +404,9 @@ function App() {
                   Download Tasqly and start planning your next week in minutes.
                 </div>
               </div>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                 <a
-                  className="inline-flex items-center justify-center rounded-xl bg-aqua px-4 py-2 text-sm font-semibold text-primary shadow-glow transition hover:-translate-y-0.5 hover:bg-aqua/95"
+                  className={appStoreCtaClassName}
                   href={appStoreUrl}
                   target="_blank"
                   rel="noreferrer"
@@ -412,7 +414,7 @@ function App() {
                   Get Tasqly
                 </a>
                 <a
-                  className="inline-flex items-center justify-center rounded-xl bg-paper/10 px-4 py-2 text-sm font-semibold text-paper ring-1 ring-paper/15 transition hover:-translate-y-0.5 hover:bg-paper/15"
+                  className="inline-flex items-center justify-center rounded-xl bg-paper/10 px-4 py-2 text-sm font-semibold text-paper ring-1 ring-paper/15 transition hover:-translate-y-0.5 hover:bg-paper/15 sm:shrink-0"
                   href="#contact"
                 >
                   Contact support
